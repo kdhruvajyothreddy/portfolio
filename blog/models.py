@@ -19,3 +19,5 @@ class Blog(models.Model):
 # Create a migration
 
 # Migrate
+
+# Add to the admin
