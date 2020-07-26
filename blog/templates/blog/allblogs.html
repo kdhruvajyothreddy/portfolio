@@ -70,36 +70,26 @@ user-select: none;
 </header>
 
 <main role="main">
-
-<section class="jumbotron text-center">
-<div class="container">
-<h1>Hi, I am Dhruv</h1>
-<p class="lead text-muted">Hey! My name's Dhruv and I love to make Django websites. It's the thrill of handling the requests that the people want</p>
-<p>
-    <a href="mailto:kdhruvajyothreddy@gmail.com" class="btn btn-primary my-2">Email me</a>
-</p>
-</div>
-</section>
-
-<div class="album py-5 bg-light">
-<div class="container">
-<div class="row">
-
-{% for job in jobs.all %}
-<div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-    <img class="card-img-top img-rounded" src="{{ job.image.url }}" />
-    <div class="card-body">
-        <p class="card-text">{{ job.summary }}</p>
+    <div class="container">
+        <h1 class="text-center pt-3">Welcome to Dhruv's Blog</h1>
+        <br/>
+        <br/>
+        <br/>
+        <h2>Latest Posts</h2>
+        <hr/>
     </div>
+{% for blog in blogs.all %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+        <img class="card-img-top img-rounded" src="{{ blog.image.url }}" />
+            <div class="card-body">
+                <a href=""><h5 class="card-title">{{ blog.title }}</h5></a>
+                <p class="card-text">{{ blog.body }}</p>
+                <p class="card-subtitle mb-2 text-muted">Published Date: {{ blog.pub_date }}</p>                
+            </div>
+        </div>
     </div>
-</div>
 {% endfor %}
-
-</div>
-</div>
-</div>
-
 </main>
 
 <footer class="text-muted">
