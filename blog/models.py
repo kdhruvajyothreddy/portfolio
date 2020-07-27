@@ -18,8 +18,11 @@ class Blog(models.Model):
 # Migrate
 # Add to the admin
 
-    def summary(self):
+    def __str__(self): # To display list of blogs by 'title' on admin page
+        return self.title
+
+    def summary(self): # To limit number of characters to 100 for 'body'
         return self.body[:100]
     
-    def pub_date_pretty(self):
+    def pub_date_pretty(self): # To display date format limited to date only
         return self.pub_date.strftime('%b %e %Y')
